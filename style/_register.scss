@@ -1,0 +1,107 @@
+.register-content{
+  background-color: $color-secondary;
+  color:$color-primary;
+  .container{
+    @include max-width;
+    text-align: center;
+    padding: 50px 15px;
+    h2{
+      font-size: 48px;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+    p{
+      padding-bottom: 20px;
+      font-size: 18px;
+    }
+    .register-form{
+      margin: 0 auto;
+      max-width: 600px;
+      line-height: 1.5;
+      padding: 15px;
+      box-shadow: 3px 3px 5px rgba(0,0,0,0.35);
+      border-top: 5px solid $color-tertiary;
+      h3{
+        font-weight: 700px;
+        padding-bottom: 20px;
+      }
+      .form-flex{
+        @include flex(center,flex-start);
+      }
+      .register-rule{
+        width: 100%;
+        p{
+          text-align: left;
+          font-size: 14px;
+        }
+      }
+      .register-input{
+        width: 100%;
+        @include flex(center,flex-start);
+        flex-direction: column;
+        position: relative;
+        label{
+          display: block;
+        }
+        input{
+          width: 100%;
+          padding: 3px;
+          border-radius: 5px;
+          border: 1px solid rgba(0,0,0,0.35);
+          text-indent: 30px;
+          margin-top: 5px;
+          line-height: 22px;
+        }
+        .fa-envelope{
+          position: absolute;
+          top: 36px;
+          left: 10px;
+        }
+        .lock1{
+          position: absolute;
+          top: 94px;
+          left: 10px;
+        }
+        .lock2{
+          position: absolute;
+          top: 128px;
+          left: 10px;
+        }
+        .register-done{
+          color:$color-tertiary;
+          padding-bottom: 60px;
+        }
+        .btn-register{
+          padding: 10px 40px;
+          background-color: $color-tertiary;
+          border: 0;
+          border-radius: 3px;
+          color:$color-white;
+          cursor: pointer;
+          transition: .5s;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          &:hover{
+            @include index-hover;
+          }
+        }
+      }
+    }
+  }
+  @include ipad{
+    .container{
+      @include max-width(667px);
+      padding: 50px 15px;
+    }
+  }
+  @include mobile{
+    .container{
+      @include max-width(576px);
+      padding: 50px 15px;
+      .form-flex{
+        flex-direction: column;
+      }
+    }
+  }
+}

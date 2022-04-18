@@ -1,0 +1,276 @@
+.index-content{
+  .content-intro{
+  background-color: $color-secondary;
+  padding-top: 50px;
+  .container{
+    @include max-width;
+    h2{
+      line-height: 1.8;
+      text-align: center;
+      color: $color-primary;
+      position: relative;
+      margin-bottom: 30px;
+      &::before{
+        content:"";
+        display: block;
+        width: 122px;
+        height: 2px;
+        background-color: $color-border;
+        @include absolute(50%,30%);
+      }
+      &::after{
+        content:"";
+        display: block;
+        width: 122px;
+        height: 2px;
+        background-color: $color-border;
+        @include absolute(50%,70%);
+      }
+    }
+    .intro-items{
+      @include flex(center,flex-start);
+      color: $color-primary;
+      padding-bottom: 50px;
+      .intro-item{
+        @include max-width(31.3333%);
+        margin: 1%;
+        padding: 0;
+        img{
+          margin: 30px auto;
+          border-radius: 50%;
+        }
+        h3{
+          text-align: center;
+          margin-bottom: 30px;
+          font-weight: 600;
+        }
+        p{
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  @include ipad{
+    .container{
+      @include max-width(768px);
+      h2{
+        &::before{
+          left: 20%;
+          height: 2px;
+        }
+        &::after{
+          left: 80%;
+          height: 2px;
+        }
+      }
+      .intro-items{
+        flex-direction: column;
+        .intro-item{
+          @include max-width(98.3333%);
+          img{
+            margin: 30px auto;
+          }
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  @include mobile{
+    .container{
+      @include max-width(576px);
+      h2{
+        overflow: hidden;
+        &::before{
+          left: 10%;
+          height: 2px;
+        }
+        &::after{
+          left: 90%;
+          height: 2px;
+        }
+      }
+    }
+  }
+  }
+  .content-chef{
+    background-color: $color-primary;
+    color: $color-white; 
+    .container{
+      @include max-width;
+      @include flex;
+      .chef-pic{
+        width: 100%;
+      }
+      .chef-intro{
+        margin-left: 15px;
+        h2{
+          letter-spacing: 2px;
+          margin-bottom: 30px;
+          span{
+            font-size: 14px;
+          }
+        }
+        p{
+          line-height: 1.5;
+          font-size: 14px;
+        }
+      }
+    }
+    @include ipad{
+      .container{
+        @include max-width(768px);
+        flex-direction: column;
+        img{
+          background-size: cover;
+          width: 100%;
+          height: auto;
+          padding-top: 10px;
+        }
+        .chef-intro{
+          margin:0;
+          text-align: left;
+          padding: 30px ;
+        }
+      }
+    }
+    @include se{
+      .container{
+        @include max-width(375px);
+        .chef-intro{
+          h2{
+            text-align-last: left;
+            letter-spacing: 1px;
+            font-size: 16px;
+            span{
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content-feedback{
+    background-color: $color-secondary;
+    .container{
+      color: $color-primary;
+      @include max-width;
+      h2{
+        padding: 50px 0 30px 0 ;
+        text-align: center;
+      }
+      .feedback-items{
+        @include flex;
+        .feedback-item{
+          @include max-width(31.33333%);
+          @include flex(center,flex-start);
+          padding: 1%;
+          img{
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          .feedback-text{
+            display: flex;
+            flex-direction: column;
+            padding-top: 30px;
+            p{
+              padding-top: 30px;
+            }
+            span{
+              display: block;
+              opacity: .6;
+              padding-top: 10px;
+              text-align: right;
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+    @include ipad{
+      .container{
+        @include max-width(768px);
+        .feedback-items{
+          flex-direction: column;
+          .feedback-item{
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .content-form{
+    color:$color-primary;
+    margin-bottom: 50px;
+    h2{
+      padding: 50px 0 30px 0 ;
+      text-align: center;
+    }
+    .container{
+      @include max-width;
+      @include flex(center,flex-start);
+      .form-map{
+        width:100%;
+      }
+      .form-input{
+        width:100%;
+        margin-left: 30px;
+        &>input{
+          width: 99%;
+          padding: 10px 0;
+          border-radius: 3px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          text-indent: 10px;
+        }
+        label{
+          display: block;
+        }
+        .input-vegan{
+          @include flex(flex-start);
+          margin: 10px 0;
+          line-height: 1.5;
+          .label-vegan-no{
+            padding-left: 20px;
+          }
+        }
+        .input-btn{
+          @include flex(flex-end);
+          .btn_cancel,.btn_send{
+            background-color: rgba(0,0,0,0.35);
+            font-size: 16px;
+            padding: 8px 20px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            transition: .5s;
+            &:hover{
+              @include index-hover;
+            }
+          }
+          .btn_send{
+            background-color: $color-tertiary;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    @include ipad{
+      .container{
+        @include max-width(768px);
+        flex-direction: column;
+        .form-map{
+          img{
+            width: 100%;
+            margin-bottom: 30px;
+          }
+        }
+        .form-input{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

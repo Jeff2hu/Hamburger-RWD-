@@ -1,0 +1,63 @@
+@mixin logo {
+  text-indent:101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin flex($justify:center , $align:center){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin max-width($width:1024px){
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@mixin absolute($top:50%,$left:50%,$transTop:-50%,$transLeft:-50%){
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($transTop,$transLeft);
+}
+
+@mixin index-hover{
+  opacity: .5;
+  transform: translateY(-10px);
+}
+
+@mixin header-hover{
+  transform: scale(1.1);
+  background-color: rgb(75, 75, 75);
+}
+
+@mixin product-hover{
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+@mixin ipad{
+  @media(max-width:769px){
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media(max-width:576px){
+    @content;
+  }
+}
+
+@mixin se{
+  @media(max-width:376px){
+    @content;
+  }
+}
+
+@mixin i5{
+  @media(max-width:321px){
+    @content;
+  }
+}

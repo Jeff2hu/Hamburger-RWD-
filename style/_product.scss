@@ -1,0 +1,247 @@
+.product-content{
+  background-color: $color-secondary;
+  color:$color-primary;
+  padding-top: 50px;
+  .container{
+    @include max-width(1024px);
+    @include flex(center,flex-start);
+    .product-menu{
+      padding-right: 15px;
+      h2{
+        font-size: 20px;
+        text-align: center;
+        padding-right: 20px;
+      }
+      .product-menu-list{
+        padding-top: 30px;
+        .menu-item{
+          a{
+            color:$color-primary;
+            padding:10px;
+            border-bottom: 1px solid $color-primary;
+            transition: .5s;
+            &:hover{
+              @include product-hover;
+            }
+          }
+        }
+        .list-bgc{
+          background-color: $color-primary;
+          a{
+            color:$color-white; 
+          }
+        }
+      }
+    }
+    .product-products{
+      width: 70%;
+      .product-search{
+        @include flex(space-between,center);
+        padding-bottom: 30px;
+        .search-input{
+          position: relative;
+          width: 80%;
+          @include flex(space-between,center);
+          input{
+            width: 100%;
+            padding: 5px;
+            border: 2px solid $color-primary;
+            background-color: $color-secondary;
+          }
+          a{
+            color:$color-primary;
+            background-color: $color-primary;
+            color: white;
+            padding: 6px;
+            position: absolute;
+            right: 1px;
+            &:hover{
+              @include header-hover;
+              background-color: $color-primary;
+            }
+          }
+        }
+        .search-shoppingCart{
+          @include flex;
+          position: relative;
+          .shoppingCart-pay{
+            color:$color-primary;
+            padding-right: 10px;
+            border-right: 1px solid $color-primary;
+            z-index: 1;
+          }
+          .fa-cart-shopping{
+            color:$color-primary;
+            font-size: 20px;
+            padding-left: 10px;
+            &:hover{
+              @include header-hover;
+              background-color: $color-secondary;
+            }
+          }
+          .search-shoppingCart--num{
+            position: absolute;
+            color:$color-white;
+            background-color: $color-tertiary;
+            font-size: 14px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            top: -9px;
+            right: -9px;
+            &:hover{
+              @include header-hover;
+              background-color: $color-tertiary;
+            }
+          }
+        }
+      }
+      .product-items{
+        @include flex(flex-start,center);
+        flex-wrap: wrap;
+        text-align: center;
+        .product-item{
+          width: 31.333%;
+          margin: 1%;
+          padding-bottom: 20px;
+          box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+          position: relative;
+          img{
+            margin: 0 auto;
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            padding-bottom: 15px;
+          }
+          .fa-heart{
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            color:white;
+            &:hover{
+              color:red;
+            }
+          }
+          h3{
+            font-size: 24px;
+          }
+          .item-ribbonWrap{
+            width: 106px;
+            height: 108px;
+            overflow: hidden;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            .item-ribbon{
+              position: relative;
+              background-color: #0c9;
+              width: 148px;
+              padding: 4px 0;
+              top: 23px;
+              right: 5px;
+              color: $color-white;
+              transform: rotate(45deg);
+              box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+              &:before{
+                content: "";
+                position: absolute;
+                border-left: 8px solid #49a080;
+                border-right: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                right: 120px;
+                bottom: -8px;
+              }
+              &:after{
+                content: "";
+                position: absolute;
+                border-left: 8px solid transparent;
+                border-right: 8px solid #49a080;
+                border-bottom: 8px solid transparent;
+                right:8px;
+                bottom: -8px;
+              }
+            }
+          }
+          p{
+            font-size: 12px;
+            padding-bottom: 35px;
+            position: relative;
+            &:after{
+              content:"";
+              display: block;
+              width: 100px;
+              height: 1px;
+              background-color: $color-primary;
+              @include absolute(25px);
+            }
+          }
+          h2{
+            padding-bottom: 15px;
+          }
+          button{
+            width: 90%;
+            background-color: $color-white;
+            padding: 5px 10px;
+            font-size: 16px;
+            color: $color-tertiary;
+            border: 3px solid $color-tertiary;
+            transition: .1s;
+            &:hover{
+              @include product-hover;
+              background-color: $color-tertiary;
+            }
+            &:active{
+              @include index-hover;
+              background-color: #ed851d;
+              box-shadow: 5px 5px 5px $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include ipad{
+    .container{
+      @include max-width(768px);
+      flex-direction: column;
+      .product-menu{
+        width: 100%;
+        margin-bottom: 30px;
+        padding-right: 0;
+      }
+      .product-products{
+        width: 100%;
+        .product-items{
+          .product-item{
+            width: 47%;
+            .fa-heart{
+              left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mobile{
+    .container{
+      @include max-width(576px);
+      .product-products{
+        width: 100%;
+        .product-search{
+          .search-input{
+            width: 60%;
+          }
+        }
+        .product-items{
+          .product-item{
+            width: 100%;
+            margin-bottom: 30px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
